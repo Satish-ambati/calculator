@@ -20,11 +20,13 @@ function update(input){
         }
     if(input=='del')
         {
-            
-        }
+            let del=result.innerHTML;
+            del=del.slice(0,-1);
+            result.innerHTML=del;
+         }
     if(input=='C')
         {
-            result.innerHTML='0';
+            result.innerHTML='';
         }
     if(input=='=')
         {
@@ -32,4 +34,24 @@ function update(input){
             result.innerHTML=eval(exp);
         }
         
+}
+function root()
+{
+    let res=result.innerHTML;
+    res=eval(res);
+    res=Math.sqrt(res);
+    result.innerHTML=res;
+}
+function factorial(){
+    let res1=result.innerHTML;
+    //console.log(res1);
+    res1=eval(res1);
+    //console.log(res1);
+    let res2=1;
+    for(i=1;i<=res1;i++)
+        {
+            res2*=i;
+        }
+    //console.log(res2);
+    result.innerHTML=res2;
 }

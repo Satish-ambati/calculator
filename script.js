@@ -5,12 +5,14 @@ let m=0;
 result.innerHTML="";
 let inter=document.querySelector('.result span');
 function update(input){
-    if(input=='+'||input=='-'||input=='/'||input=='*'||input=='%')
-        {
-            l++;
+    if(true){
+        if(input=='+'||input=='-'||input=='/'||input=='*'||input=='%')
+            {
+                l++;
+            }
+        else{
+            m++;
         }
-    else{
-        m++;
     }
     //console.log(l,m);
     if(input!='C'&&input!='del'&&input!='=')
@@ -41,7 +43,7 @@ function update(input){
         }
     if(input=='=')
         {
-            if(l>=m)
+            if(l>m)
                 {
                     result.innerHTML='Error';
                 }

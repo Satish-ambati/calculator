@@ -1,8 +1,18 @@
 let result=document.querySelector('.result P');
+let l=0;
+let m=0;
 //console.log(result.innerHTML);
 result.innerHTML="";
+let inter=document.querySelector('.result span');
 function update(input){
-    
+    if(input=='+'||input=='-'||input=='/'||input=='*'||input=='%')
+        {
+            l++;
+        }
+    else{
+        m++;
+    }
+    //console.log(l,m);
     if(input!='C'&&input!='del'&&input!='=')
         {
             //console.log(input);
@@ -27,11 +37,19 @@ function update(input){
     if(input=='C')
         {
             result.innerHTML='';
+            inter.innerHTML='';
         }
     if(input=='=')
         {
-            let exp=result.innerHTML;
-            result.innerHTML=eval(exp);
+            if(l>=m)
+                {
+                    result.innerHTML='Error';
+                }
+            else{
+                let exp=result.innerHTML;
+                inter.innerHTML=exp;
+                result.innerHTML=eval(exp);
+            }
         }
         
 }
@@ -39,19 +57,26 @@ function root()
 {
     let res=result.innerHTML;
     res=eval(res);
+    inter.innerHTML="root"+'('+res+')';
     res=Math.sqrt(res);
     result.innerHTML=res;
 }
 function factorial(){
     let res1=result.innerHTML;
     //console.log(res1);
-    res1=eval(res1);
-    //console.log(res1);
-    let res2=1;
-    for(i=1;i<=res1;i++)
+    if(res1=='')
+        {
+            result.innerHTML='';
+        }
+    else{
+        res1=eval(res1);
+        let res2=1;
+        for(i=1;i<=res1;i++)
         {
             res2*=i;
         }
     //console.log(res2);
-    result.innerHTML=res2;
+        result.innerHTML=res2;
+        inter.innerHTML=res1+'!';
+    }
 }

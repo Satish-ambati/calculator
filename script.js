@@ -2,7 +2,7 @@ let result=document.querySelector('.result P');
 let l=0;
 let m=0;
 //console.log(result.innerHTML);
-result.innerHTML="";
+result.innerHTML="0";
 let inter=document.querySelector('.result span');
 function update(input){
     if(true){
@@ -17,6 +17,10 @@ function update(input){
     //console.log(l,m);
     if(input!='C'&&input!='del'&&input!='=')
         {
+            if(result.innerHTML=="0")
+                {
+                    result.innerHTML="";
+                }
             //console.log(input);
             if(input=='b1')
                 {
@@ -38,7 +42,7 @@ function update(input){
          }
     if(input=='C')
         {
-            result.innerHTML='';
+            result.innerHTML='0';
             inter.innerHTML='';
         }
     if(input=='=')
@@ -65,7 +69,6 @@ function root()
 }
 function factorial(){
     let res1=result.innerHTML;
-    //console.log(res1);
     if(res1=='')
         {
             result.innerHTML='';
@@ -77,7 +80,6 @@ function factorial(){
         {
             res2*=i;
         }
-    //console.log(res2);
         result.innerHTML=res2;
         inter.innerHTML=res1+'!';
     }

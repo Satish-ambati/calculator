@@ -84,3 +84,16 @@ function factorial(){
         inter.innerHTML=res1+'!';
     }
 }
+const height1=document.getElementById("button1");
+const width1=document.getElementById("button2");
+function hypo(){    
+    let h1 = parseFloat(height1.value); 
+    console.log(h1);
+    let w1 = parseFloat(width1.value);
+    console.log(w1);
+    const ttl=h1*h1+w1*w1;
+    console.log(ttl);
+    const result9=Math.sqrt(ttl);
+    console.log(result9);
+    document.getElementById("result6").innerHTML=`ఐ మూల=${result9}`;
+}

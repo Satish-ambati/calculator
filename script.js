@@ -84,16 +84,18 @@ function factorial(){
         inter.innerHTML=res1+'!';
     }
 }
-const height1=document.getElementById("button1");
-const width1=document.getElementById("button2");
-function hypo(){    
-    let h1 = parseFloat(height1.value); 
-    console.log(h1);
+function hypo(){ 
+    const height1=document.getElementById("button1");
+    const width1=document.getElementById("button2"); 
+    let h1 = parseFloat(height1.value);  
+    //let h1 = height1.innerHTML; 
+    //console.log(h1);
     let w1 = parseFloat(width1.value);
-    console.log(w1);
-    const ttl=h1*h1+w1*w1;
-    console.log(ttl);
-    const result9=Math.sqrt(ttl);
-    console.log(result9);
+    //let w1 = width1.innerHTML;
+    //console.log(w1);
+    const tttl=h1*h1+w1*w1;
+    //console.log(tttl);
+    const result9=Math.sqrt(tttl);
+    //console.log(result9);
     document.getElementById("result6").innerHTML=`ఐ మూల=${result9}`;
 }
